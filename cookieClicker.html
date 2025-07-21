@@ -5,12 +5,18 @@
   <title>Cookie Clicker</title>
 </head>
 <body style="font-family: monospace; text-align: center; padding-top: 100px; background-color: #f4f4f4;">
-<div id="message" style="margin-bottom: 20px;">Click the cookie to start!</div>
-<div id="cookieButton" style="font-size: 2rem; margin-bottom: 20px;">🍪</div>
-<div id="counter">0</div>
+<div id="message" style="font-size: 2rem; margin-bottom: 20px;">Click the cookie to start!</div>
+<div id="cookieButton" style="font-size: 4rem; margin-bottom: 20px; cursor: pointer;">🍪</div>
+<div id="counter" style="font-size: 2rem;">0</div>
 
 <script>
-  // Code will go here
+  const cookieButton = document.getElementById('cookieButton'); //Create cookie button
+  const counterDisplay = document.getElementById('counter'); //Create counter display
+  const messageDisplay = document.getElementById('message'); //Create message display
+
+  let clickCount = 0; //Initialize click counter
+
+  // Code for handling the click will go here
 </script>
 </body>
 </html>
