@@ -10,13 +10,31 @@
 <div id="counter" style="font-size: 2rem;">0</div>
 
 <script>
-  const cookieButton = document.getElementById('cookieButton'); //Create cookie button
-  const counterDisplay = document.getElementById('counter'); //Create counter display
-  const messageDisplay = document.getElementById('message'); //Create message display
+  const cookieButton = document.getElementById('cookieButton'); // Create cookie button
+  const counterDisplay = document.getElementById('counter'); // Create counter display
+  const messageDisplay = document.getElementById('message'); // Create message display
 
-  let clickCount = 0; //Initialize click counter
+  let clickCount = 0; // Initialize click counter
 
-  // Code for handling the click will go here
+  // Function to increment the click count and update the message
+  function handleCookieClick() {
+    clickCount++; // Increment the counter on each click
+    counterDisplay.textContent = clickCount; // Update the counter display
+
+    // Show a new message at specific milestones
+    if (clickCount === 10) {
+      messageDisplay.textContent = "You’re just getting started!";
+    } else if (clickCount === 25) {
+      messageDisplay.textContent = "Wow, that’s a lot of cookies!";
+    } else if (clickCount === 50) {
+      messageDisplay.textContent = "Are you still clicking?";
+    } else if (clickCount === 100) {
+      messageDisplay.textContent = "You win! Maybe take a break.";
+    }
+  }
+
+  // Add event listener for the click event using handleCookieClick
+  cookieButton.addEventListener('click', handleCookieClick);
 </script>
 </body>
 </html>
