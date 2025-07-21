@@ -2,14 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!--
   <title>Cookie Clicker</title>
 </head>
+  
 <body style="font-family: monospace; text-align: center; padding-top: 100px; background-color: #f4f4f4;">
 <div id="message" style="font-size: 2rem; margin-bottom: 20px;">Click the cookie to start!</div>
 <div id="cookieButton" style="font-size: 4rem; margin-bottom: 20px; cursor: pointer;">🍪</div>
 <div id="counter" style="font-size: 2rem;">0</div>
+  -->
+    <title>Rainbow Clicker</title>
+</head>
+<body style="font-family: monospace; text-align: center; padding-top: 100px; background-color: #f4f4f4;">
+<div id="message" style="font-size: 2rem; margin-bottom: 20px;">Click the rainbow to start!</div>
+<div id="rainbowButton" style="font-size: 4rem; margin-bottom: 20px; cursor: pointer;">🌈</div>
+<div id="counter" style="font-size: 2rem;">0</div>
 
 <script>
+  
+  const rainbowButton = document.getElementById('rainbowButton'); // Create rainbow button
+  const counterDisplay = document.getElementById('counter'); // Create counter display
+  const messageDisplay = document.getElementById('message'); // Create message display
+
+  let clickCount = 0;
+
+  function handleRainbowClick() {
+    clickCount++;
+    counterDisplay.textContent = clickCount;
+
+    // Change background color and message at specific milestones
+    if (clickCount === 5) {
+      document.body.style.backgroundColor = "red"; //Change BG to red
+      messageDisplay.textContent = "Hi :)";
+    } else if (clickCount === 10) {
+      document.body.style.backgroundColor = "orange"; //Change BG to orange
+      messageDisplay.textContent = "This is fun!";
+    } else if (clickCount === 25) {
+      document.body.style.backgroundColor = "yellow"; //Change BG to yellow
+      messageDisplay.textContent = "Wow, that’s a lot of rainbows!";
+    } else if (clickCount === 35) {
+      document.body.style.backgroundColor = "green"; //Change BG to green
+      messageDisplay.textContent = "You’re committed!";
+    } else if (clickCount === 50) {
+      document.body.style.backgroundColor = "blue"; //Change BG to blue
+      messageDisplay.textContent = "Are you still clicking?";
+    } else if (clickCount === 100) {
+      document.body.style.backgroundColor = "purple"; //Change BG to purple
+      messageDisplay.textContent = "You Win! Happy Pride!";
+    }
+  }
+
+  // Add event listener for the click event using handleRainbowClick
+  rainbowButton.addEventListener('click', handleRainbowClick); 
+  
+/*
   const cookieButton = document.getElementById('cookieButton'); // Create cookie button
   const counterDisplay = document.getElementById('counter'); // Create counter display
   const messageDisplay = document.getElementById('message'); // Create message display
@@ -35,6 +81,9 @@
 
   // Add event listener for the click event using handleCookieClick
   cookieButton.addEventListener('click', handleCookieClick);
+  */
+
+  
 </script>
 </body>
 </html>
